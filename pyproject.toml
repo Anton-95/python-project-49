@@ -4,9 +4,17 @@ version = "0.1.0"
 description = ""
 authors = ["Anton Arkhipov <antonolegovich44@yandex.ru>"]
 readme = "README.md"
+packages = [
+  { include = "brain_games" },
+]
+
 
 [tool.poetry.dependencies]
 python = "^3.12"
+
+
+[tool.poetry.scripts]
+brain-games = "brain_games.scripts.brain_games:main"
 
 
 [build-system]

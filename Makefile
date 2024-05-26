@@ -1,3 +1,4 @@
+
 install: # poetry install
 	poetry install
 
@@ -13,5 +14,8 @@ publish: # project publication
 package-install: # project install
 	python3 -m pip install --user dist/*whl
 
-package-reinstall:
+package-reinstall: #reinstall project
 	python3 -m pip install --user --force dist/*whl
+
+linter: #start linter
+	poetry run flake8 brain_games

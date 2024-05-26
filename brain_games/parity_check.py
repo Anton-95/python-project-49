@@ -1,17 +1,10 @@
 import prompt
 import random
-
-
-def welcome_user():
-    user_name = prompt.string('May I have your name? ', empty=False)
-    print(f'Hello, {user_name}!')
-    return user_name
-
-
-user_name = welcome_user()
+from brain_games.cli import welcome_user
 
 
 def parity_cheking():
+    user_name = welcome_user()
     print('Answer "yes" if the number is even, otherwise answer "no".')
     for _ in range(3):
         number = random.randint(1, 100)

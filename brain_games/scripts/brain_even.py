@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
-from brain_games.scripts.brain_games import main as greeting_game
 from brain_games.parity_check import parity_cheking
 
 
 def main():
-    greeting_game()
+    print('Welcome to the Brain Games!')
     parity_cheking()
 
 

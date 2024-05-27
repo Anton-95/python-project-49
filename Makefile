@@ -15,7 +15,7 @@ package-install: # project install
 	python3 -m pip install --user dist/*whl
 
 package-reinstall: #reinstall project
-	python3 -m pip install --user --force dist/*whl
+	python3 -m pip install --user --force-reinstall dist/*whl
 
 linter: #start linter
 	poetry run flake8 brain_games

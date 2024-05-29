@@ -7,9 +7,10 @@ def parity_cheking():
     user_name = welcome_user()
     print('Answer "yes" if the number is even, otherwise answer "no".')
     for _ in range(3):
-        number = randint(1, 100)
-        answer = question_answer(number)
-        if (number % 2 == 0 and answer == 'yes') or (number % 2 != 0 and answer == 'no'):
+        num = randint(1, 100)
+        answer = question_answer(num)
+        if (num % 2 == 0 and answer == 'yes') or \
+                (num % 2 != 0 and answer == 'no'):
             print('Correct!')
         elif answer == 'yes':
             wrong_answer(answer, 'no', user_name)

@@ -11,7 +11,7 @@ def search_gcd():
         number_1 = randint(1, 100)
         number_2 = randint(1, 100)
         result = gcd(number_1, number_2)
-        answer = question_answer((number_1, number_2))
+        answer = question_answer(f'{number_1} {number_2}')
         if answer == str(result):
             print('Correct!')
         else:

@@ -10,8 +10,7 @@ def prime_number_definition():
         number = randint(2, 50)
         half_number = number // 2
         for divider in range(2, half_number):
-            correct_answer = number % divider
-            if correct_answer == 0:
+            if number % divider == 0:
                 correct_answer = 'no'
                 break
         else:

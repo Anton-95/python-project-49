@@ -1,6 +1,6 @@
 from random import randint
 from brain_games.cli import welcome_user
-from brain_games.games.general import question_answer, wrong_answer, final
+from brain_games.games.general import question_answer, checking_answer, final
 
 
 def parity_cheking():
@@ -8,15 +8,12 @@ def parity_cheking():
     print('Answer "yes" if the number is even, otherwise answer "no".')
     for _ in range(3):
         num = randint(1, 100)
-        answer = question_answer(num)
-        if (num % 2 == 0 and answer == 'yes') or \
-                (num % 2 != 0 and answer == 'no'):
-            print('Correct!')
-        elif answer == 'yes':
-            wrong_answer(answer, 'no', user_name)
-            break
-        else:
-            wrong_answer(answer, 'yes', user_name)
+        if num % 2 == 0:
+            correct_answer = 'yes'
+        elif num % 2 != 0:
+            correct_answer = 'no'
+        check = checking_answer(question_answer(num), correct_answer, user_name)
+        if check == 'wrong':
             break
     else:
         final(user_name)

@@ -1,7 +1,7 @@
 from random import choice
 from random import randint
 from brain_games.cli import welcome_user
-from brain_games.games.general import question_answer, wrong_answer, final
+from brain_games.games.general import question_answer, checking_answer, final
 
 
 def calculate():
@@ -13,12 +13,11 @@ def calculate():
         number_2 = randint(1, 100)
         operator = choice(operators)
         expression = f'{number_1} {operator} {number_2}'
-        result_expression = eval(expression)
-        answer = question_answer(expression)
-        if result_expression == int(answer):
-            print('Correct!')
-        else:
-            wrong_answer(answer, result_expression, user_name)
+        correct_answer = eval(expression)
+        check = checking_answer(question_answer(expression),
+                                str(correct_answer),
+                                user_name)
+        if check == 'wrong':
             break
     else:
         final(user_name)

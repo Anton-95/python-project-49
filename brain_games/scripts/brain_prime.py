@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 from brain_games.games.prime import prime_number_definition
+from brain_games.games.general import welcome_to_game
 
 
 def main():
-    print('Welcome to the Brain Games!')
+    welcome_to_game()
     prime_number_definition()
 
 

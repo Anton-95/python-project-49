@@ -1,4 +1,4 @@
-from brain_games.games.general import question_answer, wrong_answer, final
+from brain_games.games.general import question_answer, checking_answer, final
 from brain_games.cli import welcome_user
 from random import randint
 
@@ -10,17 +10,16 @@ def prime_number_definition():
         number = randint(2, 50)
         half_number = number // 2
         for divider in range(2, half_number):
-            result = number % divider
-            if result == 0:
-                result = 'no'
+            correct_answer = number % divider
+            if correct_answer == 0:
+                correct_answer = 'no'
                 break
         else:
-            result = 'yes'
-        answer = question_answer(number)
-        if answer == result:
-            print('Correct!')
-        else:
-            wrong_answer(answer, result, user_name)
+            correct_answer = 'yes'
+        check = checking_answer(question_answer(number),
+                                correct_answer,
+                                user_name)
+        if check == 'wrong':
             break
     else:
         final(user_name)

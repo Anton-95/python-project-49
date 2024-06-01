@@ -1,7 +1,7 @@
 from math import gcd
 from random import randint
 from brain_games.cli import welcome_user
-from brain_games.games.general import question_answer, wrong_answer, final
+from brain_games.games.general import question_answer, checking_answer, final
 
 
 def search_gcd():
@@ -10,12 +10,11 @@ def search_gcd():
     for _ in range(3):
         number_1 = randint(1, 100)
         number_2 = randint(1, 100)
-        result = gcd(number_1, number_2)
-        answer = question_answer(f'{number_1} {number_2}')
-        if answer == str(result):
-            print('Correct!')
-        else:
-            wrong_answer(answer, result, user_name)
+        correct_answer = gcd(number_1, number_2)
+        chek = checking_answer(question_answer(f'{number_1} {number_2}'),
+                               str(correct_answer),
+                               user_name)
+        if chek == 'wrong':
             break
     else:
         final(user_name)

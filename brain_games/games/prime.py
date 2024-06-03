@@ -1,4 +1,4 @@
-from brain_games.games.engine import round
+from engine import round
 from brain_games.cli import welcome_user
 from random import randint
 

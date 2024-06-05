@@ -1,15 +1,10 @@
-from engine import round
-from brain_games.cli import welcome_user
 from random import randint
 
 
-def defenition_number():
-    user_name = welcome_user()
-    print('What number is missing in the progression?')
-    round(question_and_correct_answer, user_name)
+GAME_RULES = 'What number is missing in the progression?'
 
 
-def question_and_correct_answer():
+def GENERATE_QUESTION_ANSWER():
     sequence = []
     start = randint(1, 60)
     step = randint(2, 6)

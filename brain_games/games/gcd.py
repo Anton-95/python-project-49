@@ -1,16 +1,11 @@
-from engine import round
-from brain_games.cli import welcome_user
 from random import randint
 from math import gcd
 
 
-def search_gcd():
-    user_name = welcome_user()
-    print('Find the greatest common divisor of given numbers.')
-    round(question_and_correct_answer, user_name)
+GAME_RULES = 'Find the greatest common divisor of given numbers.'
 
 
-def question_and_correct_answer():
+def GENERATE_QUESTION_ANSWER():
     number_1 = randint(1, 100)
     number_2 = randint(1, 100)
     numbers = f'{number_1} {number_2}'

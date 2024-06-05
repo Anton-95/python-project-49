@@ -1,16 +1,11 @@
-from engine import round
-from brain_games.cli import welcome_user
 from random import randint
 
 
-def prime_number_definition():
-    user_name = welcome_user()
-    print('Answer "yes" if given number is prime. Otherwise answer "no".')
-    round(question_and_correct_answer, user_name)
+GAME_RULES = 'Answer "yes" if given number is prime. Otherwise answer "no".'
 
 
-def question_and_correct_answer():
-    number = randint(2, 50)
+def GENERATE_QUESTION_ANSWER():
+    number = randint(5, 50)
     half_number = number // 2
     for divider in range(2, half_number):
         if number % divider == 0:

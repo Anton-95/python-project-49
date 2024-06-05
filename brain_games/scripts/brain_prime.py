@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-from brain_games.games.prime import prime_number_definition
+from brain_games.engine import game_launch
+import brain_games.games.prime
 
 
 def main():
-    prime_number_definition()
+    game_launch(brain_games.games.prime)
 
 
 if __name__ == '__main__':

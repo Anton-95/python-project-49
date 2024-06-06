@@ -5,7 +5,7 @@ from operator import add, sub, mul
 GAME_RULES = 'What is the result of the expression?'
 
 
-def GENERATE_QUESTION_ANSWER():
+def generate_question_answer():
     operators = '+-*'
     number_1 = randint(1, 100)
     number_2 = randint(1, 100)

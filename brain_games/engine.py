@@ -5,7 +5,7 @@ from prompt import string
 def game_launch(game_module):
     user_name = welcome_user()
     print(game_module.GAME_RULES)
-    looping_rounds(game_module.GENERATE_QUESTION_ANSWER, user_name)
+    looping_rounds(game_module.generate_question_answer, user_name)
 
 
 def looping_rounds(question, user_name):

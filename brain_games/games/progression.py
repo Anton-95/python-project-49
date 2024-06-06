@@ -4,7 +4,7 @@ from random import randint
 GAME_RULES = 'What number is missing in the progression?'
 
 
-def GENERATE_QUESTION_ANSWER():
+def generate_question_answer():
     sequence = []
     start = randint(1, 60)
     step = randint(2, 6)

@@ -5,15 +5,11 @@ from prompt import string
 def game_launch(game_module):
     user_name = welcome_user()
     print(game_module.GAME_RULES)
-    looping_rounds(game_module.generate_question_answer, user_name)
-
-
-def looping_rounds(question, user_name):
     for _ in range(3):
-        correct_answer_user = question()
-        result_cheking_answer = checking_answer(output_question_enter_answer
-                                                (correct_answer_user[0]),
-                                                correct_answer_user[1],
+        question, correct_answer = game_module.generate_question_answer()
+        print(f'Question: {question}')
+        result_cheking_answer = checking_answer(enter_answer(),
+                                                correct_answer,
                                                 user_name)
         if result_cheking_answer == 'wrong':
             break
@@ -23,6 +19,11 @@ def looping_rounds(question, user_name):
 
 def output_question_enter_answer(question):
     user_answer = string(f'Question: {question}\nYour answer: ', empty=False)
+    return user_answer
+
+
+def enter_answer():
+    user_answer = string('Your answer: ', empty=False)
     return user_answer
 
 

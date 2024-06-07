@@ -17,11 +17,6 @@ def game_launch(game_module):
         print(f'Congratulations, {user_name}!')
 
 
-def output_question_enter_answer(question):
-    user_answer = string(f'Question: {question}\nYour answer: ', empty=False)
-    return user_answer
-
-
 def enter_answer():
     user_answer = string('Your answer: ', empty=False)
     return user_answer

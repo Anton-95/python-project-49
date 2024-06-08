@@ -6,17 +6,16 @@ GAME_RULES = 'Answer "yes" if given number is prime. Otherwise answer "no".'
 
 def generate_question_answer():
     number = randint(5, 50)
-    half_number = number // 2
-    for divider in range(2, half_number):
-        if check_prime_number(number, divider):
-            correct_answer = 'no'
-            break
-        else:
-            correct_answer = 'yes'
+    if is_prime(number):
+        correct_answer = 'yes'
+    else:
+        correct_answer = 'no'
     return (number, correct_answer)
 
 
-def check_prime_number(num, divider):
-    if num % divider == 0:
-        return True
-    return False
+def is_prime(number):
+    half_number = number // 2
+    for divider in range(2, half_number):
+        if number % divider == 0:
+            return False
+    return True
